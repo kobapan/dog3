@@ -1,0 +1,26 @@
+<div><h4>メール編集</h4>
+</div>
+
+<div id="editArea">
+  <form action="?" method="POST">
+    <div>
+      <div class="label">FROM:</div><div class="formArea"><input type="text" name="from" id="from" value="" size="70"/></div>
+    </div>
+    <div>
+      <div class="label">TO:</div><div class="formArea"><input type="text" name="to" id="to" value="" size="70"/></div>
+    </div>
+    <div>
+      <div class="label">SUBJECT:</div><div class="formArea"><input type="text" name="subject" id="subject" value="" size="85"/></div>
+    </div>
+    <div>
+      <div class="label">BODY:</div><div class="formArea"><textarea name="body" rows="10" cols="70"></textarea></div>
+    </div>
+    <div>
+      <input type="submit" value="送信"><input type="reset" value="リセット">
+      <input type="hidden" name="controller" value="edit"/>
+      <input type="hidden" name="action" value="send"/>
+    </div>
+  </form>
+</div>
+
+

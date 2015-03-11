@@ -1,0 +1,41 @@
+<script type="text/javascript">
+function refresh() {
+    window.location.reload();
+}
+</script>
+<h2>INBOX - <%= (sys-getenv "REMOTE_USER") %></h2><a href="?controller=edit">新規作成</a>　　<a href="javascript:void(0);" onclick="refresh();">更新</a>
+<div id="inboxList">
+  <div id="list-header">
+    <div class="column subject">
+      件名
+    </div>
+    <div class="column body">
+      本文
+    </div>
+    <div class="column from">
+      送信者
+    </div>
+    <div class="column date">
+      日付
+    </div>
+  </div>
+  <% (for-each (lambda (header) %>
+  <div id="<%= (assoc-ref header"message-id") %>">
+    <div class="column subject">
+      <%= (sxml:string->xml (assoc-ref header "subject")) %>
+    </div>
+    <div class="column body">
+      <%= (regexp-replace-all #/\r?\n/ (sxml:string->xml (assoc-ref header "body" "-\r\n")) "<br/>") %>
+    </div>
+    <div class="column from">
+      <%= (sxml:string->xml (assoc-ref header "from")) %>
+    </div>
+    <div class="column date">
+      <%= (string-take (assoc-ref header "date") 25) %>
+    </div>
+  </div>
+  <% ) headers ) %>
+</div>
+
+<br style="clear:both;"/>
+

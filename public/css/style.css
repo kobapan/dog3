@@ -1,0 +1,35 @@
+* { 
+    font-size: 12px;
+}
+#inboxList .column {
+    float: left;
+    height:30px;
+    padding: 2px 0px 2px 2px;
+    border-left: 1px #DEDEDE solid;
+    border-bottom: 1px #DEDEDE solid;
+    overflow: none;
+}
+#inboxList div#list-header div {
+    border-top: 1px #DEDEDE solid;
+    background-color:#EEFFAA;
+    height:15px;
+}
+#inboxList .subject {
+    clear: both;
+    width:29%;
+}
+#inboxList .body {
+    width:29%;
+}
+#inboxList .from {
+    width:20%;
+}
+#inboxList .date {
+    border-right: 1px #DEDEDE solid;
+    width:20%;
+}
+
+#editArea .label {
+}
+#editArea .formArea {
+}
